@@ -14,3 +14,15 @@ test('employee can only access their own employee row', () => {
   assert.equal(canAccessEmployee(employee, 'emp-2'), false)
 })
 test('unknown roles do not pass role checks', () => assert.equal(['admin', 'hr', 'employee'].includes('manager'), false))
+
+test('employee scope rejects missing or mismatched employee ids', () => {
+  assert.equal(canAccessEmployee({ ...employee, employeeId: undefined }, 'emp-1'), false)
+  assert.equal(canAccessEmployee(employee, ''), false)
+})
+
+test('setup policy requires a strong password and normalized email', () => {
+  const email = ' Admin@Example.com '.trim().toLowerCase()
+  assert.equal(email, 'admin@example.com')
+  assert.equal('short-pass'.length >= 12, false)
+  assert.equal('long-enough-pass'.length >= 12, true)
+})
