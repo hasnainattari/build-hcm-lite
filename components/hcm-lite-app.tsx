@@ -52,17 +52,17 @@ export function HcmLiteApp() {
 
   return (
     <main className="min-h-screen bg-[#f6f8fb] text-slate-950">
-      <header className="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8">
-        <div className="flex items-center gap-3"><div className="flex size-9 items-center justify-center rounded-xl bg-indigo-600 text-white"><Sparkles className="size-4" /></div><span className="text-lg font-bold tracking-tight">HCM <span className="text-indigo-600">Lite</span></span></div>
-        <div className="hidden items-center gap-2 text-sm text-slate-500 sm:flex"><ShieldCheck className="size-4 text-emerald-600" /> Private by design</div>
+      <header className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-8 sm:py-5">
+        <div className="flex min-w-0 items-center gap-2.5 sm:gap-3"><div className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-indigo-600 text-white"><Sparkles className="size-4" /></div><span className="truncate text-base font-bold tracking-tight sm:text-lg">HCM <span className="text-indigo-600">Lite</span></span></div>
+        <div className="hidden shrink-0 items-center gap-2 text-sm text-slate-500 sm:flex"><ShieldCheck className="size-4 text-emerald-600" /> Private by design</div>
       </header>
 
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 pb-12 pt-8 sm:px-8 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:gap-20 lg:pt-16">
-        <section>
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-indigo-100 bg-indigo-50 px-3 py-1.5 text-xs font-semibold text-indigo-700"><Sparkles className="size-3.5" /> AI-assisted people operations</div>
-          <h1 className="max-w-xl text-4xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-6xl">A calmer way to run your <span className="text-indigo-600">people ops.</span></h1>
-          <p className="mt-6 max-w-xl text-base leading-7 text-slate-500 sm:text-lg">HCM Lite brings attendance, leave, payroll, and people insights into one focused workspace built for growing teams.</p>
-          <div className="mt-9 grid max-w-lg grid-cols-2 gap-3 sm:grid-cols-4">
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 pb-8 pt-6 sm:gap-10 sm:px-8 sm:pb-12 sm:pt-8 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:gap-20 lg:pt-16">
+        <section className="min-w-0">
+          <div className="mb-5 inline-flex max-w-full items-center gap-2 rounded-full border border-indigo-100 bg-indigo-50 px-3 py-1.5 text-xs font-semibold text-indigo-700 sm:mb-6"><Sparkles className="size-3.5 shrink-0" /> <span className="truncate">AI-assisted people operations</span></div>
+          <h1 className="max-w-xl text-[2.65rem] font-semibold leading-[1.05] tracking-[-0.045em] sm:text-6xl">A calmer way to run your <span className="text-indigo-600">people ops.</span></h1>
+          <p className="mt-5 max-w-xl text-base leading-7 text-slate-500 sm:mt-6 sm:text-lg">HCM Lite brings attendance, leave, payroll, and people insights into one focused workspace built for growing teams.</p>
+          <div className="mt-7 grid max-w-lg grid-cols-2 gap-2.5 sm:mt-9 sm:grid-cols-4 sm:gap-3">
             {[[Users, 'People'], [Clock3, 'Attendance'], [FileText, 'Payroll'], [CircleHelp, 'AI help']].map(([Icon, label]) => <div key={label as string} className="rounded-2xl border border-slate-200 bg-white p-3.5"><Icon className="size-4 text-indigo-600" /><p className="mt-4 text-xs font-medium text-slate-600">{label as string}</p></div>)}
           </div>
         </section>
